@@ -3,20 +3,23 @@ import { Webhook } from "svix"
 
 const clerkWebhooks = async (req,res)=>{
     try {
+        console.log("Webhook hit")
         // Creating a svix instance
         const whook = new Webhook(process.env.CLERK_WEBHOOK_SECRET)
         // GET Headers
         const headers = {
-            "svix-id":req.headers["svix-id"],
-            "svix-timestamp":req.headers["svix-timestamp"],
-            "svix-signature":req.headers["svix-signature"],
+            "svix-id": req.headers["svix-id"],
+            "svix-timestamp": req.headers["svix-timestamp"],
+            "svix-signature": req.headers["svix-signature"],
         }
 
         // verifying headers
-        await whook.verify(req.rawBody, headers)
+        await whook.verify(JSON.stringify(req.body), headers)
 
         // getting data from request body
         const {data, type} = req.body
+
+        console.log("Event Type:", type) 
 
         // switch cases for different events
         switch(type){

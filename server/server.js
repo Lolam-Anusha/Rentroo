@@ -11,17 +11,14 @@ await connectDB()
 const app = express() 
 app.use(cors())
 
-// middelware setup
-app.use(express.json({
-  verify: (req, res, buf) => {
-    req.rawBody = buf;
-  },
-}));
+app.post(
+  "/api/clerk",
+  express.raw({ type: "application/json" }),
+  clerkWebhooks
+)
 
+app.use(express.json())
 app.use(clerkMiddleware())
-
-// API to listen clerk webhooks
-app.post("/api/clerk", clerkWebhooks)
 
 
 
