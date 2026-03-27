@@ -11,12 +11,14 @@ await connectDB()
 const app = express() 
 app.use(cors())
 
+// ✅ Webhook route FIRST
 app.post(
   "/api/clerk",
   express.raw({ type: "application/json" }),
   clerkWebhooks
 )
 
+// other middleware AFTER
 app.use(express.json())
 app.use(clerkMiddleware())
 

@@ -1,7 +1,7 @@
 import User from "../models/User.js";
 import { Webhook } from "svix"
 
-const clerkWebhooks = async (req,res)=>{
+const clerkWebhooks = async (req, res) => {
     try {
         console.log("Webhook hit")
         // Creating a svix instance
@@ -14,21 +14,22 @@ const clerkWebhooks = async (req,res)=>{
         }
 
         // verifying headers
-        await whook.verify(JSON.stringify(req.body), headers)
+        await whook.verify(req.body, headers)
 
-        // getting data from request body
-        const {data, type} = req.body
+        const body = JSON.parse(req.body.toString())
 
-        console.log("Event Type:", type) 
+        const { data, type } = body
+
+        console.log("Event Type:", type)
 
         // switch cases for different events
-        switch(type){
+        switch (type) {
             case "user.created": {
                 const userData = {
                     _id: data.id,
-                    email: data.email_addresses[0].email_address,
-                    username: data.first_name + " " + data.last_name,
-                    image: data.image_url,
+                    email: data.email_addresses?.[0]?.email_address || "",
+                    username: `${data.first_name || ""} ${data.last_name || ""}`,
+                    image: data.image_url || "",
                 };
                 await User.create(userData)
                 break;
@@ -54,11 +55,11 @@ const clerkWebhooks = async (req,res)=>{
                 break;
         }
 
-        res.json({success:true, message:"Webhook Received"})
+        res.json({ success: true, message: "Webhook Received" })
 
     } catch (error) {
         console.log(error.message)
-        res.json({success:false, message:error.message})
+        res.json({ success: false, message: error.message })
     }
 }
 
