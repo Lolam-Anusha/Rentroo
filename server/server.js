@@ -11,13 +11,15 @@ await connectDB()
 const app = express() 
 app.use(cors())
 
-// middelware setup
-app.use(express.json())
+
 
 app.use(clerkMiddleware())
 
 // API to listen clerk webhooks
-app.use("/api/clerk", clerkWebhooks)
+app.post("/api/clerk", clerkWebhooks)
+
+// middelware setup
+app.use(express.json())
 
 // ROute end point to check API status
 app.get('/', (req,res)=>res.send("API Successfully Connected"))
