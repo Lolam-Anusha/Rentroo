@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link, Navigate, useLocation, useNavigate } from "react-router-dom"
 import { assets } from "../assets/data"
 import Navbar from './Navbar'
-import { useUser, useClerk, UserButton } from "@clerk/react"
+import { useUser, useClerk, UserButton } from "@clerk/clerk-react"
 
 const Header = () => {
   const [menuOpened, setMenuOpened] = useState(false)
@@ -10,7 +10,6 @@ const Header = () => {
   const [showSearch, setShowSearch] = useState(false)
   const location = useLocation()
   const { user } = useUser()
-  const {openSignIn} = useClerk()
   const navigate = useNavigate()
 
   const BookingIcon = () => (
@@ -113,7 +112,7 @@ const Header = () => {
                   </UserButton.MenuItems>
                 </UserButton>
               ) : (
-                <button onClick={openSignIn} className='btn-solid bg-black flexCenter gap-2 rounded-full'>
+                <button onClick={() => navigate("/sign-in")} className='btn-solid bg-black flexCenter gap-2 rounded-full'>
                   Login
                   <img src={assets.user} alt="userIcon" className='invert' />
                 </button>

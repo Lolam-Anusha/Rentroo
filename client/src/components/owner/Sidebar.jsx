@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { assets } from '../../assets/data'
 import { Link, NavLink, Outlet, useNavigate } from 'react-router-dom'
-import { UserButton, useUser } from '@clerk/react'
+import { UserButton, useUser } from "@clerk/clerk-react"
 
 const Sidebar = () => {
     const navigate = useNavigate()

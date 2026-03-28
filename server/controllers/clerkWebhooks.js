@@ -25,13 +25,21 @@ const clerkWebhooks = async (req, res) => {
         // switch cases for different events
         switch (type) {
             case "user.created": {
+                console.log("Inside user.created")
+
                 const userData = {
                     _id: data.id,
-                    email: data.email_addresses?.[0]?.email_address || "",
+                    email: data.email_addresses?.[0]?.email_address || "test@example.com",
                     username: `${data.first_name || ""} ${data.last_name || ""}`,
                     image: data.image_url || "",
                 };
-                await User.create(userData)
+
+                console.log("User Data:", userData)
+
+                const newUser = await User.create(userData)
+
+                console.log("Saved User:", newUser)
+
                 break;
             }
 

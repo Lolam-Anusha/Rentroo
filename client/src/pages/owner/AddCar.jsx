@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { assets, dummyCars } from "../../assets/data"
-import { useUser } from '@clerk/react'
+import { useUser } from "@clerk/clerk-react"
 
 const AddCar = () => {
     const [loading, setLoading] = useState(false)

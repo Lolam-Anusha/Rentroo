@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { assets, dummyDashboardData } from "../../assets/data"
-import { useUser } from '@clerk/react'
+import { useUser } from "@clerk/clerk-react"
 
 
 const Dashboard = () => {

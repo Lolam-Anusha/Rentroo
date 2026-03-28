@@ -1,5 +1,6 @@
 import React from 'react'
-import {Route, Routes, useLocation} from "react-router-dom"
+import { SignUp, SignIn } from "@clerk/clerk-react";
+import { Route, Routes, useLocation } from "react-router-dom"
 import Header from './components/Header'
 import Home from './pages/Home'
 import Listing from './pages/Listing'
@@ -19,21 +20,23 @@ const App = () => {
 
   return (
     <main>
-      {!isOwnerPath && <Header/>}
+      {!isOwnerPath && <Header />}
       <Routes>
-        <Route path='/' element={<Home/>}/>
-        <Route path='/listing' element={<Listing/>}/>
-        <Route path='/listing/:id' element={<CarDetails/>}/>
-        <Route path='/blog' element={<Blog/>}/>
-        <Route path='/contact' element={<Contact/>}/>
-        <Route path='/my-bookings' element={<MyBookings/>}/>
-        <Route path='/owner' element={<Sidebar/>}>
-          <Route index element={<Dashboard/>}/>
-          <Route path='/owner/add-car' element={<AddCar/>}/>
-          <Route path='/owner/list-car' element={<ListCar/>}/>
+        <Route path='/' element={<Home />} />
+        <Route path='/listing' element={<Listing />} />
+        <Route path='/listing/:id' element={<CarDetails />} />
+        <Route path='/blog' element={<Blog />} />
+        <Route path='/contact' element={<Contact />} />
+        <Route path='/my-bookings' element={<MyBookings />} />
+        <Route path='/sign-up' element={<SignUp />} />
+        <Route path='/sign-in' element={<SignIn />} />
+        <Route path='/owner' element={<Sidebar />}>
+          <Route index element={<Dashboard />} />
+          <Route path='/owner/add-car' element={<AddCar />} />
+          <Route path='/owner/list-car' element={<ListCar />} />
         </Route>
       </Routes>
-      {!isOwnerPath && <Footer/>}
+      {!isOwnerPath && <Footer />}
     </main>
   )
 }

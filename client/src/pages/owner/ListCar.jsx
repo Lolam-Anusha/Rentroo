@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { dummyCars } from "../../assets/data"
-import { useUser } from '@clerk/react'
+import { useUser } from "@clerk/clerk-react"
 
 
 const ListCar = () => {
