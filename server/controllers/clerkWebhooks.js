@@ -27,18 +27,14 @@ const clerkWebhooks = async (req, res) => {
 
                 const userData = {
                     _id: data.id,
-                    email: data.email_addresses?.[0]?.email_address || "test@example.com",
+                    email: data.email_addresses?.[0]?.email_address || "",
                     username: `${data.first_name || ""} ${data.last_name || ""}`.trim(),
                     image: data.image_url || "",
                 };
 
-                console.log("User Data:", userData)
-
-                const newUser = await User.create(userData)
-
-                console.log("Saved User:", newUser)
-
-                break;
+                await User.findByIdAndUpdate(data.id, userData, { upsert: true, new: true })
+                console.log("User saved:", data.id)
+                break
             }
 
             case "user.updated": {
