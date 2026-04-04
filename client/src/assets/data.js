@@ -63,193 +63,193 @@ import blog8 from "../assets/blogs/blog8.jpg";
 
 
 export const assets = {
-    logoImg,
-    search,
-    user,
-    menu,
-    close,
-    bg,
-    right,
-    pin,
-    calendar,
-    star,
-    sliders,
-    odometer,
-    transmission,
-    seats,
-    fuelType,
-    car,
-    carBlack,
-    carPlus,
-    facebook,
-    instagram,
-    twitter,
-    linkedin,
-    mail,
-    phone,
-    dollar,
-    house,
-    pound,
-    map,
-    dashboard,
-    list,
-    userImg,
-    user1,
-    user2,
-    user3,
-    about1,
-    about2,
-    banner,
-    agencyReg,
-    uploadIcon
+  logoImg,
+  search,
+  user,
+  menu,
+  close,
+  bg,
+  right,
+  pin,
+  calendar,
+  star,
+  sliders,
+  odometer,
+  transmission,
+  seats,
+  fuelType,
+  car,
+  carBlack,
+  carPlus,
+  facebook,
+  instagram,
+  twitter,
+  linkedin,
+  mail,
+  phone,
+  dollar,
+  house,
+  pound,
+  map,
+  dashboard,
+  list,
+  userImg,
+  user1,
+  user2,
+  user3,
+  about1,
+  about2,
+  banner,
+  agencyReg,
+  uploadIcon
 }
 
 export const cities = [
-    "Abu Dhabi",
-    "New York",
-    "Toronto",
-    "Berlin",
+  "Abu Dhabi",
+  "New York",
+  "Toronto",
+  "Berlin",
 ];
 
 
 export const dummyAgentData = {
-    "_id": "agent_2unqyL4diJFP1E3pIBnasc7w8hP",
-    "username": "Izabella Stress",
-    "image": userImg,
-    "role": "agencyOwner", 
-    "createdAt": "2025-03-25T09:29:16.367Z",
-    "updatedAt": "2025-04-10T06:34:48.719Z",
-    "__v": 1,
-    "recentSearchedCities": cities,
-  }
-  
-  
-  // Agency Dummy Data
-  export const dummyAgencyData = {
-    "_id": "67f7642a197ac559e4089b99",
-    "name": "Aurora Motors",
-    "contact": "0123456789",
-    "email": "contact@auroramotors.com", 
-    "address": "Suite 405, Midtown Business Tower, Park Avenue",
-    "owner": dummyAgentData,
-    "city": "Toronto",
-    "createdAt": "2025-04-12T10:45:30.000Z",
-    "updatedAt": "2025-04-12T10:45:30.000Z",
-    "__v": 0
+  "_id": "agent_2unqyL4diJFP1E3pIBnasc7w8hP",
+  "username": "Izabella Stress",
+  "image": userImg,
+  "role": "agencyOwner",
+  "createdAt": "2025-03-25T09:29:16.367Z",
+  "updatedAt": "2025-04-10T06:34:48.719Z",
+  "__v": 1,
+  "recentSearchedCities": cities,
+}
+
+
+// Agency Dummy Data
+export const dummyAgencyData = {
+  "_id": "67f7642a197ac559e4089b99",
+  "name": "Aurora Motors",
+  "contact": "0123456789",
+  "email": "contact@auroramotors.com",
+  "address": "Suite 405, Midtown Business Tower, Park Avenue",
+  "owner": dummyAgentData,
+  "city": "Toronto",
+  "createdAt": "2025-04-12T10:45:30.000Z",
+  "updatedAt": "2025-04-12T10:45:30.000Z",
+  "__v": 0
 }
 
 
 // Cars Listings Dummy Data
 export const dummyCars = [
-    {
-        "_id": "67f7647c197ac559e4089b96",
-        "agency": dummyAgencyData,
-        "title": "Porsche 911 Carrera",
-        "description": "Two-door sport coupe with sharp handling, responsive turbocharged engine, and a driver focused cockpit. Suited for spirited drives and short trips with premium materials and modern connectivity.",
-        "address": "789 Park Lane, New York, USA",
-        "city": "New York",
-        "country": "USA",
-        "bodyType": "Coupe",
-        "price":{
-          "rent": 299,
-          "sale": 33000
-        },
-        "specs": {
-          "transmission": "Manual",
-          "seats": 2,
-          "fuelType": "Petrol"
-        },
-        "odometer": 12500,
-        "features": ["Rear Camera","Apple CarPlay","Keyless Entry","Adaptive Cruise","Heated Seats","Sunroof"],
-        "images": [img1, cImg2, cImg3, cImg4],
-        "isAvailable": true,
-        "status": "available",
-        "createdAt": "2025-04-10T06:26:04.013Z",
-        "updatedAt": "2025-04-10T06:26:04.013Z",
-        "__v": 0
+  {
+    "_id": "67f7647c197ac559e4089b96",
+    "agency": dummyAgencyData,
+    "title": "Porsche 911 Carrera",
+    "description": "Two-door sport coupe with sharp handling, responsive turbocharged engine, and a driver focused cockpit. Suited for spirited drives and short trips with premium materials and modern connectivity.",
+    "address": "789 Park Lane, New York, USA",
+    "city": "New York",
+    "country": "USA",
+    "bodyType": "Coupe",
+    "price": {
+      "rent": 299,
+      "sale": 33000
     },
-    {
-        "_id": "67f76452197ac559e4089b8e",
-        "agency": dummyAgencyData,
-        "title": "Lamborghini Urus",
-        "description": "Mid-size SUV with robust chassis, elevated ride height, and all-wheel capability. Practical interior, large cargo area, and modern driver aids for family trips and mixed road conditions.",
-        "address": "301 Sunset Boulevard, Los Angeles, USA",
-        "city": "Los Angeles",
-        "country": "USA",
-        "bodyType": "SUV",
-        "price":{
-         "rent": 599,
-         "sale": 29000
-        },
-         "specs": {
-          "transmission": "Automatic",
-          "seats": 5,
-          "fuelType": "Electric"
-        },
-        "odometer": 46000,
-        "features": ["Rear Camera","Keyless Entry","Adaptive Cruise","Sunroof","Parking Assist","Cruise Control"],
-        "images": [img2, cImg3, cImg4, cImg2],
-        "isAvailable": true,
-        "status": "available",
-        "createdAt": "2025-04-10T06:25:22.593Z",
-        "updatedAt": "2025-04-10T06:25:22.593Z",
-        "__v": 0
+    "specs": {
+      "transmission": "Manual",
+      "seats": 2,
+      "fuelType": "Petrol"
     },
-    {
-        "_id": "67f76406197ac559e4089b82",
-        "agency": dummyAgencyData,
-        "title": "Audi RS3 Sportback",
-        "description": "Compact hatchback built for efficient city driving, easy parking, and low running costs. Agile steering and good fuel economy with practical cargo flexibility.",
-        "address": "900 Bay Street, Toronto, Canada",
-        "city": "Toronto",
-        "country": "Canada",
-        "bodyType": "Hatchback",
-        "price":{
-          "rent": 299,
-          "sale": 19000
-        },
-         "specs": {
-          "transmission": "Manual",
-          "seats": 5,
-          "fuelType": "Diesel"
-        },
-        "odometer": 18500,
-        "features": ["Apple CarPlay","Keyless Entry","Adaptive Cruise","Heated Seats","Parking Assist","Rear Camera"],
-        "images": [img3, cImg4, cImg3, cImg2],
-        "isAvailable": true,
-        "status": "available",
-        "createdAt": "2025-04-10T06:24:06.285Z",
-        "updatedAt": "2025-04-10T06:24:06.285Z",
-        "__v": 0
+    "odometer": 12500,
+    "features": ["Rear Camera", "Apple CarPlay", "Keyless Entry", "Adaptive Cruise", "Heated Seats", "Sunroof"],
+    "images": [img1, cImg2, cImg3, cImg4],
+    "isAvailable": true,
+    "status": "available",
+    "createdAt": "2025-04-10T06:26:04.013Z",
+    "updatedAt": "2025-04-10T06:26:04.013Z",
+    "__v": 0
+  },
+  {
+    "_id": "67f76452197ac559e4089b8e",
+    "agency": dummyAgencyData,
+    "title": "Lamborghini Urus",
+    "description": "Mid-size SUV with robust chassis, elevated ride height, and all-wheel capability. Practical interior, large cargo area, and modern driver aids for family trips and mixed road conditions.",
+    "address": "301 Sunset Boulevard, Los Angeles, USA",
+    "city": "Los Angeles",
+    "country": "USA",
+    "bodyType": "SUV",
+    "price": {
+      "rent": 599,
+      "sale": 29000
     },
-    {
-        "_id": "67f763d8197ac559e4089b7a",
-        "agency": dummyAgencyData,
-        "title": "Mercedes-Benz S 500",
-        "description": "Four-door executive sedan focused on comfort and refinement. Smooth ride, spacious rear seating, advanced safety features, and premium cabin materials for long-distance comfort.",
-        "address": "29 Alexanderplatz, Berlin, Germany",
-        "city": "Berlin",
-        "country": "Germany",
-        "bodyType": "Sedan",
-         "price":{
-           "rent": 399,
-           "sale": 33000
-        },
-         "specs": {
-          "transmission": "Automatic",
-          "seats": 5,
-          "fuelType": "Electric"
-        },
-        "odometer": 29500,
-        "features": ["Adaptive Cruise","Heated Seats","Sunroof","Parking Assist","Cruise Control","Apple CarPlay"],
-        "images": [img4, cImg2, cImg3, cImg4],
-        "isAvailable": true,
-        "status": "available",
-        "createdAt": "2025-04-10T06:23:20.252Z",
-        "updatedAt": "2025-04-10T06:23:20.252Z",
-        "__v": 0
+    "specs": {
+      "transmission": "Automatic",
+      "seats": 5,
+      "fuelType": "Electric"
     },
-    {
+    "odometer": 46000,
+    "features": ["Rear Camera", "Keyless Entry", "Adaptive Cruise", "Sunroof", "Parking Assist", "Cruise Control"],
+    "images": [img2, cImg3, cImg4, cImg2],
+    "isAvailable": true,
+    "status": "available",
+    "createdAt": "2025-04-10T06:25:22.593Z",
+    "updatedAt": "2025-04-10T06:25:22.593Z",
+    "__v": 0
+  },
+  {
+    "_id": "67f76406197ac559e4089b82",
+    "agency": dummyAgencyData,
+    "title": "Audi RS3 Sportback",
+    "description": "Compact hatchback built for efficient city driving, easy parking, and low running costs. Agile steering and good fuel economy with practical cargo flexibility.",
+    "address": "900 Bay Street, Toronto, Canada",
+    "city": "Toronto",
+    "country": "Canada",
+    "bodyType": "Hatchback",
+    "price": {
+      "rent": 299,
+      "sale": 19000
+    },
+    "specs": {
+      "transmission": "Manual",
+      "seats": 5,
+      "fuelType": "Diesel"
+    },
+    "odometer": 18500,
+    "features": ["Apple CarPlay", "Keyless Entry", "Adaptive Cruise", "Heated Seats", "Parking Assist", "Rear Camera"],
+    "images": [img3, cImg4, cImg3, cImg2],
+    "isAvailable": true,
+    "status": "available",
+    "createdAt": "2025-04-10T06:24:06.285Z",
+    "updatedAt": "2025-04-10T06:24:06.285Z",
+    "__v": 0
+  },
+  {
+    "_id": "67f763d8197ac559e4089b7a",
+    "agency": dummyAgencyData,
+    "title": "Mercedes-Benz S 500",
+    "description": "Four-door executive sedan focused on comfort and refinement. Smooth ride, spacious rear seating, advanced safety features, and premium cabin materials for long-distance comfort.",
+    "address": "29 Alexanderplatz, Berlin, Germany",
+    "city": "Berlin",
+    "country": "Germany",
+    "bodyType": "Sedan",
+    "price": {
+      "rent": 399,
+      "sale": 33000
+    },
+    "specs": {
+      "transmission": "Automatic",
+      "seats": 5,
+      "fuelType": "Electric"
+    },
+    "odometer": 29500,
+    "features": ["Adaptive Cruise", "Heated Seats", "Sunroof", "Parking Assist", "Cruise Control", "Apple CarPlay"],
+    "images": [img4, cImg2, cImg3, cImg4],
+    "isAvailable": true,
+    "status": "available",
+    "createdAt": "2025-04-10T06:23:20.252Z",
+    "updatedAt": "2025-04-10T06:23:20.252Z",
+    "__v": 0
+  },
+  {
     "_id": "67f7663b197ac559e4089bb8",
     "agency": dummyAgencyData,
     "title": "Porsche Taycan Turbo S",
@@ -258,7 +258,7 @@ export const dummyCars = [
     "city": "Abu Dhabi",
     "country": "UAE",
     "bodyType": "Sedan",
-    "price":{
+    "price": {
       "rent": 499,
       "sale": 35000
     },
@@ -268,7 +268,7 @@ export const dummyCars = [
       "fuelType": "Hybrid"
     },
     "odometer": 12000,
-    "features": ["Rear Camera","Apple CarPlay","Keyless Entry","Adaptive Cruise","Sunroof","Parking Assist"],
+    "features": ["Rear Camera", "Apple CarPlay", "Keyless Entry", "Adaptive Cruise", "Sunroof", "Parking Assist"],
     "images": [img8, cImg2, cImg4, cImg3],
     "isAvailable": true,
     "status": "available",
@@ -276,7 +276,7 @@ export const dummyCars = [
     "updatedAt": "2025-04-10T06:29:30.000Z",
     "__v": 0
   },
-    {
+  {
     "_id": "67f765aa197ac559e4089b9c",
     "agency": dummyAgencyData,
     "title": "Porsche 718 Boxster",
@@ -285,7 +285,7 @@ export const dummyCars = [
     "city": "Abu Dhabi",
     "country": "USA",
     "bodyType": "Convertible",
-     "price":{
+    "price": {
       "rent": 499,
       "sale": 44000
     },
@@ -295,7 +295,7 @@ export const dummyCars = [
       "fuelType": "Electric"
     },
     "odometer": 22500,
-    "features": ["Parking Assist","Cruise Control","Rear Camera","Apple CarPlay","Keyless Entry","Heated Seats"],
+    "features": ["Parking Assist", "Cruise Control", "Rear Camera", "Apple CarPlay", "Keyless Entry", "Heated Seats"],
     "images": [img5, cImg3, cImg2, cImg4],
     "isAvailable": true,
     "status": "available",
@@ -313,7 +313,7 @@ export const dummyCars = [
     "city": "Edinburgh",
     "country": "UK",
     "bodyType": "Van",
-    "price":{
+    "price": {
       "rent": 199,
       "sale": 22000
     },
@@ -323,7 +323,7 @@ export const dummyCars = [
       "fuelType": "Petrol"
     },
     "odometer": 76000,
-    "features": ["Rear Camera","Keyless Entry","Apple CarPlay","Parking Assist","Adaptive Cruise","Cruise Control"],
+    "features": ["Rear Camera", "Keyless Entry", "Apple CarPlay", "Parking Assist", "Adaptive Cruise", "Cruise Control"],
     "images": [img6, cImg2, cImg3, cImg4],
     "isAvailable": true,
     "status": "available",
@@ -342,7 +342,7 @@ export const dummyCars = [
     "city": "London",
     "country": "UK",
     "bodyType": "Coupe",
-    "price":{
+    "price": {
       "rent": 1200,
       "sale": 44000
     },
@@ -352,7 +352,7 @@ export const dummyCars = [
       "fuelType": "Diesel"
     },
     "odometer": 8500,
-    "features": ["Rear Camera","Adaptive Cruise","Heated Seats","Sunroof","Apple CarPlay","Keyless Entry"],
+    "features": ["Rear Camera", "Adaptive Cruise", "Heated Seats", "Sunroof", "Apple CarPlay", "Keyless Entry"],
     "images": [img7, cImg3, cImg4, cImg2],
     "isAvailable": true,
     "status": "available",
@@ -369,7 +369,7 @@ export const dummyCars = [
     "city": "Monaco",
     "country": "Monaco",
     "bodyType": "Coupe",
-    "price":{
+    "price": {
       "rent": 1400,
       "sale": 88000
     },
@@ -379,7 +379,7 @@ export const dummyCars = [
       "fuelType": "Petrol"
     },
     "odometer": 7000,
-    "features": ["Rear Camera","Parking Assist","Adaptive Cruise","Apple CarPlay","Keyless Entry","Cruise Control"],
+    "features": ["Rear Camera", "Parking Assist", "Adaptive Cruise", "Apple CarPlay", "Keyless Entry", "Cruise Control"],
     "images": [img9, cImg3, cImg4, cImg2],
     "isAvailable": true,
     "status": "available",
@@ -397,7 +397,7 @@ export const dummyCars = [
     "city": "Rome",
     "country": "Italy",
     "bodyType": "Coupe",
-    "price":{
+    "price": {
       "rent": 1300,
       "sale": 72000
     },
@@ -407,7 +407,7 @@ export const dummyCars = [
       "fuelType": "Petrol"
     },
     "odometer": 6200,
-    "features": ["Rear Camera","Apple CarPlay","Adaptive Cruise","Heated Seats","Sunroof","Cruise Control"],
+    "features": ["Rear Camera", "Apple CarPlay", "Adaptive Cruise", "Heated Seats", "Sunroof", "Cruise Control"],
     "images": [img10, cImg4, cImg3, cImg2],
     "isAvailable": true,
     "status": "available",
@@ -424,7 +424,7 @@ export const dummyCars = [
     "city": "London",
     "country": "UK",
     "bodyType": "Grand Tourer",
-    "price":{
+    "price": {
       "rent": 650,
       "sale": 89000
     },
@@ -434,7 +434,7 @@ export const dummyCars = [
       "fuelType": "Hybrid"
     },
     "odometer": 14000,
-    "features": ["Rear Camera","Apple CarPlay","Heated Seats","Adaptive Cruise","Parking Assist","Cruise Control"],
+    "features": ["Rear Camera", "Apple CarPlay", "Heated Seats", "Adaptive Cruise", "Parking Assist", "Cruise Control"],
     "images": [img11, cImg3, cImg4, img2],
     "isAvailable": true,
     "status": "available",
@@ -448,51 +448,51 @@ export const dummyCars = [
 
 // User Bookings Dummy Data
 export const dummyBookingsData = [
-    {
-        "_id": "67f76839994a731e97d3b8ce",
-        "user": dummyAgentData,
-        "car": dummyCars[1],
-        "agency": dummyAgencyData,
-        "pickUpDate": "2025-04-30T00:00:00.000Z",
-        "dropOffDate": "2025-05-01T00:00:00.000Z",
-        "totalPrice": 299,
-        "status": "pending",
-        "paymentMethod": "Stripe",
-        "isPaid": false,
-        "createdAt": "2025-04-10T06:42:01.529Z",
-        "updatedAt": "2025-04-10T06:43:54.520Z",
-        "__v": 0
-    },
-    {
-        "_id": "67f76829994a731e97d3b8c3",
-        "user": dummyAgentData,
-        "car": dummyCars[0],
-        "agency": dummyAgencyData,
-        "pickUpDate": "2025-04-27T00:00:00.000Z",
-        "dropOffDate": "2025-04-28T00:00:00.000Z",
-        "totalPrice": 399,
-        "status": "pending",
-        "paymentMethod": "Pay at Pick-up",
-        "isPaid": false,
-        "createdAt": "2025-04-10T06:41:45.873Z",
-        "updatedAt": "2025-04-10T06:41:45.873Z",
-        "__v": 0
-    },
-    {
-        "_id": "67f76810994a731e97d3b8b4",
-        "user": dummyAgentData,
-        "car": dummyCars[3],
-        "agency": dummyAgencyData,
-        "pickUpDate": "2025-04-11T00:00:00.000Z",
-        "dropOffDate": "2025-04-12T00:00:00.000Z",
-        "totalPrice": 199,
-        "status": "pending",
-        "paymentMethod": "Pay at Pick-up",
-        "isPaid": true,
-        "createdAt": "2025-04-10T06:41:20.501Z",
-        "updatedAt": "2025-04-10T06:41:20.501Z",
-        "__v": 0
-    }
+  {
+    "_id": "67f76839994a731e97d3b8ce",
+    "user": dummyAgentData,
+    "car": dummyCars[1],
+    "agency": dummyAgencyData,
+    "pickUpDate": "2025-04-30T00:00:00.000Z",
+    "dropOffDate": "2025-05-01T00:00:00.000Z",
+    "totalPrice": 299,
+    "status": "pending",
+    "paymentMethod": "Stripe",
+    "isPaid": false,
+    "createdAt": "2025-04-10T06:42:01.529Z",
+    "updatedAt": "2025-04-10T06:43:54.520Z",
+    "__v": 0
+  },
+  {
+    "_id": "67f76829994a731e97d3b8c3",
+    "user": dummyAgentData,
+    "car": dummyCars[0],
+    "agency": dummyAgencyData,
+    "pickUpDate": "2025-04-27T00:00:00.000Z",
+    "dropOffDate": "2025-04-28T00:00:00.000Z",
+    "totalPrice": 399,
+    "status": "pending",
+    "paymentMethod": "Pay at Pick-up",
+    "isPaid": false,
+    "createdAt": "2025-04-10T06:41:45.873Z",
+    "updatedAt": "2025-04-10T06:41:45.873Z",
+    "__v": 0
+  },
+  {
+    "_id": "67f76810994a731e97d3b8b4",
+    "user": dummyAgentData,
+    "car": dummyCars[3],
+    "agency": dummyAgencyData,
+    "pickUpDate": "2025-04-11T00:00:00.000Z",
+    "dropOffDate": "2025-04-12T00:00:00.000Z",
+    "totalPrice": 199,
+    "status": "pending",
+    "paymentMethod": "Pay at Pick-up",
+    "isPaid": true,
+    "createdAt": "2025-04-10T06:41:20.501Z",
+    "updatedAt": "2025-04-10T06:41:20.501Z",
+    "__v": 0
+  }
 ]
 
 
@@ -552,7 +552,7 @@ export const blogs = [
 
 // Dashboard Dummy Data
 export const dummyDashboardData = {
-    "totalBookings": 3,
-    "totalRevenue": 897,
-    "bookings": dummyBookingsData
+  "totalBookings": 3,
+  "totalRevenue": 897,
+  "bookings": dummyBookingsData
 }

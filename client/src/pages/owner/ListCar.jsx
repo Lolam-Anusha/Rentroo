@@ -1,15 +1,41 @@
 import React, { useEffect, useState } from 'react'
-import { dummyCars } from "../../assets/data"
-import { useUser } from "@clerk/clerk-react"
+import { useAppContext } from '../../context/AppContext'
+import toast from 'react-hot-toast'
 
 
 const ListCar = () => {
+  const {axios, getToken, user, currency} = useAppContext()
   const [cars, setCars] = useState([])
-  const { user } = useUser()
-  const currency = "$"
 
-  const getCars = () => {
-    setCars(dummyCars)
+  // get cars of the agency owner
+  const getCars = async () => {
+    try {
+      const {data} = await axios.get('/api/cars/owner', {headers: {Authorization: `Bearer ${await getToken()}`}})
+
+      if(data.success){
+        setCars(data.cars)
+      }else{
+        toast.error(data.message)
+      }
+    } catch (error) {
+      toast.error(error.message)
+    }
+  }
+
+  // toggle availability of the car
+  const toggleAvailability = async (carId)=>{
+    try {
+      const {data} = await axios.post('/api/cars/toggle-availability', {carId}, {headers: {Authorization: `Bearer ${await getToken()}`}})
+
+      if(data.success){
+        toast.success(data.message)
+        getCars()
+      }else{
+        toast.error(data.message)
+      }
+    } catch (error) {
+      toast.error(error.message)
+    }
   }
 
   useEffect(() => {
@@ -43,8 +69,8 @@ const ListCar = () => {
               <div>{car.address}</div>
               <div>{currency}{car.price.sale}</div>
               <div>
-                <label htmlFor="" className='relative inline-flex items-center cursor-pointer text-gray-900 gap-3'>
-                  <input type="checkbox" className='sr-only peer' defaultChecked={car.isAvailable}/>
+                <label className='relative inline-flex items-center cursor-pointer text-gray-900 gap-3'>
+                  <input onChange={()=>toggleAvailability(car._id)} type="checkbox" className='sr-only peer' defaultChecked={car.isAvailable}/>
                   <div className='w-10 h-6 bg-slate-300 rounded-full peer peer-checked:bg-solid transition-colors duration-200'/>
                   <span className='absolute left-1 top-1 w-4 h-4 bg-white rounded-full transition-transform duration-200 ease-in-out peer-checked:translate-x-4'/>
                 </label>

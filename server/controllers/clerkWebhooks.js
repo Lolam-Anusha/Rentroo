@@ -16,9 +16,7 @@ const clerkWebhooks = async (req, res) => {
         // verifying headers
         await whook.verify(req.body, headers)
 
-        const body = JSON.parse(req.body.toString())
-
-        const { data, type } = body
+        const { data, type } = JSON.parse(req.body.toString())
 
         console.log("Event Type:", type)
 
@@ -30,7 +28,7 @@ const clerkWebhooks = async (req, res) => {
                 const userData = {
                     _id: data.id,
                     email: data.email_addresses?.[0]?.email_address || "test@example.com",
-                    username: `${data.first_name || ""} ${data.last_name || ""}`,
+                    username: `${data.first_name || ""} ${data.last_name || ""}`.trim(),
                     image: data.image_url || "",
                 };
 
@@ -47,7 +45,7 @@ const clerkWebhooks = async (req, res) => {
                 const userData = {
                     _id: data.id,
                     email: data.email_addresses[0].email_address,
-                    username: data.first_name + " " + data.last_name,
+                    username: `${data.first_name || ""} ${data.last_name || ""}`.trim(),
                     image: data.image_url,
                 };
                 await User.findByIdAndUpdate(data.id, userData)
@@ -66,8 +64,8 @@ const clerkWebhooks = async (req, res) => {
         res.json({ success: true, message: "Webhook Received" })
 
     } catch (error) {
-        console.log(error.message)
-        res.json({ success: false, message: error.message })
+        console.log("Webhook error", error.message)
+        res.status(400).json({ success: false, message: error.message })
     }
 }
 

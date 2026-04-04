@@ -1,7 +1,26 @@
-import React from 'react'
-import { assets, cities } from "../assets/data"
+import React, { useState } from 'react'
+import { assets } from "../assets/data"
+import { useAppContext } from '../context/AppContext'
 
 const Hero = () => {
+    const {navigate, searchedCities, setSearchedCities, axios, getToken} = useAppContext()
+    const [destination, setDestination] = useState("")
+
+    const onSearch = async (e) =>{
+        e.preventDefault()
+        navigate(`/listing?destination=${destination}`)
+        // API to save recent searched city
+        await axios.post('/api/user/store-recent-search', {recentSearchedCities: destination}, {headers: {Authorization: `Bearer ${await getToken()}`}})
+
+        setSearchedCities((prevSearchedCities)=>{
+            const updatedSearchedCities = [...prevSearchedCities, destination]
+            if(updatedSearchedCities.length > 3){
+                updatedSearchedCities.shift()
+            }
+            return updatedSearchedCities;
+        })
+    }
+
     return (
         <section className='bg-primary'>
             {/* CONTAINER */}
@@ -13,15 +32,15 @@ const Hero = () => {
                             className="pl-1 rounded-md"> {" "}premium vehicles {" "}</span>{" "} available in exciting destinations.</h1>
                     </div>
                     {/* Search/Booking form */}
-                    <form className='bg-white text-gray-500 rounded-md md:rounded-full px-6 md:pl-12 py-4 flex flex-col md:flex-row gap-4 lg:gap-x-8 max-w-md md:max-w-4xl ring-1 ring-slate-900/5 relative'>
+                    <form onSubmit={onSearch} className='bg-white text-gray-500 rounded-md md:rounded-full px-6 md:pl-12 py-4 flex flex-col md:flex-row gap-4 lg:gap-x-8 max-w-md md:max-w-4xl ring-1 ring-slate-900/5 relative'>
                         <div className='flex flex-col w-full'>
                             <div className='flex items-center gap-2'>
                                 <img src={assets.pin} alt="pinIcon" width={20}/>
                                 <label htmlFor="destinationInput">Destination</label>
                             </div>
-                            <input list='destinations' id="destinationInput" type="text" className=" rounded border border-gray-200 px-3 py-1.5 mt-1.5 text-sm outline-none capitalize" placeholder="Type here" required />
+                            <input onChange={(e)=> setDestination(e.target.value)} value={destination} list='destinations' id="destinationInput" type="text" className=" rounded border border-gray-200 px-3 py-1.5 mt-1.5 text-sm outline-none capitalize" placeholder="Type here" required />
                             <datalist id="destinations">
-                                {cities.map((city, index)=>(
+                                {searchedCities.map((city, index)=>(
                                     <option value={city} key={index}/>
                                 ))}
                             </datalist>
